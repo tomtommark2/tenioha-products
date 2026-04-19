@@ -38,6 +38,10 @@
       --max: 1080px;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -284,6 +288,21 @@
       font-size: 0.92rem;
     }
 
+    .product-points span a {
+      color: #6fc8ff;
+      text-decoration: underline;
+      text-decoration-color: rgba(111, 200, 255, 0.55);
+      text-underline-offset: 0.18em;
+      transition: color 180ms ease, text-decoration-color 180ms ease;
+    }
+
+    .product-points span a:hover,
+    .product-points span a:focus-visible {
+      color: #9fdcff;
+      text-decoration-color: rgba(159, 220, 255, 0.92);
+      outline: none;
+    }
+
     .product-actions {
       display: flex;
       flex-wrap: wrap;
@@ -420,11 +439,11 @@
           <article class="product-card primary fade-up delay-1">
             <div class="product-top">
               <div class="icon-wrap">
-                <img src="./assets/grammar-zukan-icon.png" alt="例文図鑑 icon">
+                <img src="./assets/grammar-zukan-icon.png" alt="てにをは英文図解 icon">
               </div>
               <div>
                 <span class="product-type">Example Dictionary</span>
-                <h2 class="product-title">例文図鑑</h2>
+                <h2 class="product-title">てにをは英文図解</h2>
               </div>
             </div>
             <p class="product-copy">
@@ -432,11 +451,11 @@
             </p>
             <div class="product-points">
               <span>動画で「見え方」を解説し、文のまとまりをつかみやすくする</span>
-              <span>高品質ボイス付きで、つながりや区切りを耳でも確認できる</span>
               <span>基本レベルから受験レベルまで、例文ごとに理解を深められる</span>
+              <span><a href="#prime-support" data-track="jump_to_prime_support">Amazon Prime 特典の Twitch サブスク</a>で、アプリを無料で利用できます。</span>
             </div>
             <div class="product-actions">
-              <a class="btn btn-primary" href="https://grammar-zukan.web.app" target="_blank" rel="noreferrer" data-track="open_grammar_zukan">例文図鑑を見る</a>
+              <a class="btn btn-primary" href="https://grammar-zukan.web.app" target="_blank" rel="noreferrer" data-track="open_grammar_zukan">てにをは英文図解を見る</a>
             </div>
           </article>
         </div>
@@ -462,11 +481,36 @@
               <span>各教材へつながるベースになる</span>
             </div>
             <div class="product-actions">
-              <a class="btn btn-secondary" href="https://www.youtube.com/@tenioha-eng" target="_blank" rel="noreferrer" data-track="open_youtube">YouTubeを見る</a>
+              <a class="btn btn-primary" href="https://www.youtube.com/@tenioha-eng" target="_blank" rel="noreferrer" data-track="open_youtube">YouTubeを見る</a>
             </div>
           </article>
 
-          <article class="product-card secondary fade-up delay-2">
+          <article class="product-card secondary fade-up delay-2" id="prime-support">
+            <div class="product-top">
+              <div class="icon-wrap">
+                <img src="./assets/site-icon.jpg" alt="Prime x Twitch support icon">
+              </div>
+              <div>
+                <span class="product-type">Prime x Twitch</span>
+                <h2 class="product-title">Primeで無料支援</h2>
+              </div>
+            </div>
+            <p class="product-copy">
+              Amazon Prime 会員なら、Twitch の無料サブスクで「てにをは」英語。 を支援できます。
+            </p>
+            <div class="product-points">
+              <span><a href="https://help.twitch.tv/s/article/link-amazon-twitch-accounts?language=ja" target="_blank" rel="noreferrer" data-track="open_twitch_prime_help_text">Prime と Twitch を連携</a>すると無料サブスクを使えます</span>
+              <span>連携後は teniohaeng を<a href="https://www.twitch.tv/subs/teniohaeng" target="_blank" rel="noreferrer" data-track="open_twitch_subscribe_text">無料でサブスク</a>できます。</span>
+              <span>サブスク後は、てにをは英文図解アプリと Discord での月3回の質問を利用できます</span>
+            </div>
+            <div class="product-actions">
+              <a class="btn btn-primary" href="https://help.twitch.tv/s/article/link-amazon-twitch-accounts?language=ja" target="_blank" rel="noreferrer" data-track="open_twitch_prime_help">連携方法を見る</a>
+              <a class="btn btn-primary" href="https://www.twitch.tv/subs/teniohaeng" target="_blank" rel="noreferrer" data-track="open_twitch_subscribe">Twitchで支援</a>
+              <a class="btn btn-primary" href="https://discord.gg/J4rfFtJuJ4" target="_blank" rel="noreferrer" data-track="open_discord_support">Discordに参加</a>
+            </div>
+          </article>
+
+          <article class="product-card secondary fade-up delay-1">
             <div class="product-top">
               <div class="icon-wrap">
                 <img src="./assets/note-favicon.ico" alt="NOTE icon">
@@ -484,11 +528,11 @@
               <span>あとから読み返す導線として使える</span>
             </div>
             <div class="product-actions">
-              <a class="btn btn-secondary" href="https://note.com/tenioha_eng" target="_blank" rel="noreferrer" data-track="open_note">NOTEを見る</a>
+              <a class="btn btn-primary" href="https://note.com/tenioha_eng" target="_blank" rel="noreferrer" data-track="open_note">NOTEを見る</a>
             </div>
           </article>
 
-          <article class="product-card secondary fade-up delay-1">
+          <article class="product-card secondary fade-up delay-2">
             <div class="product-top">
               <div class="icon-wrap">
                 <img src="./assets/youtube-icon.jpg" alt="YouTube membership icon">
@@ -506,7 +550,7 @@
               <span>動画制作の継続を支えるメンバーシップです</span>
             </div>
             <div class="product-actions">
-              <a class="btn btn-secondary" href="https://www.youtube.com/channel/UCVRTX0EvJFeHc74fW7EftPA/join" target="_blank" rel="noreferrer" data-track="open_membership">メンバー登録</a>
+              <a class="btn btn-primary" href="https://www.youtube.com/channel/UCVRTX0EvJFeHc74fW7EftPA/join" target="_blank" rel="noreferrer" data-track="open_membership">メンバー登録</a>
             </div>
           </article>
         </div>
