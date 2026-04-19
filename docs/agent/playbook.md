@@ -1,43 +1,46 @@
-# Agent Playbook
+# Playbook
 
-This file holds the default day-to-day operating guidance for Codex and similar coding agents in this repository.
+## Goal
+- Keep the products page simple, useful, and easy to maintain.
+- Use it as a clean hub that connects the user's major products and support paths.
 
-## Purpose
-- Turn repeated prompting into documented operating practice.
-- Keep `AGENTS.md` short by storing detailed guidance here.
-- Reduce repeated explanations across threads.
+## Current Role Of The Site
+- lightweight products hub
+- CTA surface from YouTube and other content
+- support and membership gateway
+- place to explain what each product is for
 
-## Default Way Of Working
-- Start by reading `AGENTS.md` and then this file when the task is non-trivial.
-- Inspect the local codebase before proposing structural changes.
-- Prefer implementation over abstract advice when the task is actionable.
-- Keep changes narrow unless the user asks for broader cleanup.
-- Validate changes with the lightest check that gives confidence.
+## Default Editing Principles
+- Prefer clarity over density.
+- Keep the page short enough to scan quickly.
+- Add products only when they materially matter.
+- Avoid sales-heavy copy; stay education-first.
+- Put the most important user actions near the surface.
 
-## Communication
-- Treat documented repo principles as existing decisions, not new proposals.
-- If a known principle applies, continue from it instead of reintroducing it.
-- State assumptions briefly when context is missing.
-- Summaries should focus on decisions, changes made, verification, and remaining risk.
+## Page Concerns
+- order of cards
+- titles and summaries
+- icon quality
+- CTA wording
+- support links
+- analytics tags
+- mobile readability
 
-## Documentation Rules
-- Add to docs only when a rule or workflow has become repeatable.
-- Put repo-wide principles in `AGENTS.md`.
-- Put detailed operating guidance in `docs/agent/`.
-- Put reusable procedures into Skills when they are broadly repeatable.
+## Existing Repo Reality
+- The deployed site lives in `C:\Users\warut\codex_project\tenioha-products`.
+- Changes should be made here, then committed and pushed.
+- This workspace is now the canonical home of the products page.
 
-## Proposal Heuristics
-- Prefer refining the current operating model over replacing it.
-- If proposing a new practice, explain why current docs are insufficient.
-- If the same guidance appears in multiple threads, promote it into docs or a Skill.
+## Migration Checkpoints
+- Check relative asset paths after card or icon updates.
+- Check GitHub Pages deployment after push.
+- Check GA4 still uses the intended measurement ID.
+- Check CTA links after any structural edits.
+- Check mobile layout after adding new cards.
 
-## Update Triggers
-- A principle is repeated across several tasks.
-- The same misunderstanding happens in multiple threads.
-- A review standard or workflow becomes stable.
-- A prompt pattern is clearly reusable.
-
-## Out Of Scope
-- Project architecture details that belong in technical docs.
-- Long command references.
-- One-off task notes that will not be reused.
+## Good Outputs
+- updated card copy
+- new card plan
+- simplified section structure
+- deployment-safe edits
+- reusable copy for YouTube / products page alignment

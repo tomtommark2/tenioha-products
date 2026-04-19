@@ -1,42 +1,35 @@
 # AGENTS.md
 
-This file is the repository-level index for Codex and other coding agents.
+This file is the workspace map for Codex and other coding agents.
 
-## Principles
-- Treat this file as a map, not a full handbook.
-- Put stable, repo-wide rules here.
-- Put detailed guidance in `docs/agent/`.
-- Put repeatable workflows in Skills.
-- Extend existing principles before proposing new ones.
+## Purpose
+- Manage and improve the `tenioha-products` public products page.
+- Treat this workspace as the planning and operating entry point for the products page.
+
+## Read In This Order
+- `AGENTS.md`
+- `docs/agent/playbook.md`
+- `docs/strategy/site-outline.md` if it exists
+- `C:\Users\warut\.codex\profiles\warut.md` when user/business context affects copy or structure
+
+## Canonical Working Paths
+- Public page repo and deploy target: `C:\Users\warut\codex_project\tenioha-products`
+- Main page file: `C:\Users\warut\codex_project\tenioha-products\index.html`
 
 ## Working Rules
-- Read this file before making changes.
-- Check nearby `AGENTS.md` files if working in subdirectories.
-- Prefer the smallest change that satisfies the task.
-- Verify the result with the lightest meaningful check.
-- Do not rewrite established repo conventions unless the task requires it.
+- Keep this file short and map-like.
+- Prefer small, concrete changes to the live products page.
+- Preserve the current visual language unless a redesign is explicitly requested.
+- Treat copy, links, cards, analytics, and CTA placement as core concerns.
+- Treat this workspace as both the operating entry point and the page source.
 
-## Documentation Layout
-- `AGENTS.md`: repo-wide operating rules and pointers.
-- `docs/agent/`: detailed playbooks, review checklists, architecture notes, prompting guidance.
-- `skills/` or shared Codex skills: reusable workflows that should not live in this file.
+## Scope
+- products page structure
+- card additions and removals
+- copy updates
+- CTA and support links
+- analytics and deploy workflow notes
 
-## Proposal Rules
-- Do not re-propose documented principles as if they are new.
-- When suggesting improvements, start from the current operating model.
-- If a principle already exists, propose a refinement, exception, or implementation path.
-
-## Change Policy
-- Keep edits scoped to the user's request.
-- Preserve unrelated user changes.
-- Flag assumptions when local context is incomplete.
-- Prefer updating docs when a repeated pattern or decision becomes stable.
-
-## Recommended Next Files
-- `docs/agent/playbook.md`: day-to-day working conventions.
-- `docs/agent/review-checklist.md`: bug-risk and regression review points.
-- `docs/agent/workflows.md`: recurring task patterns worth turning into Skills.
-
-## Maintenance
-- Keep this file short.
-- Review it when the team notices repeated agent mistakes or repeated prompt boilerplate.
+## Detailed Guidance
+- Put day-to-day operating guidance in `docs/agent/playbook.md`.
+- Put stable site structure notes in `docs/strategy/`.
