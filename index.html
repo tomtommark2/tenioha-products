@@ -392,6 +392,35 @@
       color: var(--ink);
     }
 
+    .site-footer {
+      padding: 0 0 38px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .site-footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .site-footer a {
+      color: #9ceae6;
+      text-decoration: underline;
+      text-decoration-color: rgba(156, 234, 230, 0.45);
+      text-underline-offset: 0.2em;
+    }
+
+    .site-footer a:hover,
+    .site-footer a:focus-visible {
+      color: var(--ink);
+      text-decoration-color: rgba(242, 244, 245, 0.82);
+      outline: none;
+    }
+
     .fade-up {
       opacity: 0;
       transform: translateY(20px);
@@ -805,6 +834,15 @@
       </div>
     </section>
   </main>
+  <footer class="site-footer" aria-label="法務・お問い合わせ">
+    <div class="shell">
+      <div class="site-footer-inner">
+        <a href="mailto:tenioha.eng@gmail.com">お問い合わせ</a>
+        <span>|</span>
+        <a href="./legal.html">特定商取引法に基づく表記</a>
+      </div>
+    </div>
+  </footer>
   <script>
     document.querySelectorAll("[data-track]").forEach((element) => {
       element.addEventListener("click", function () {
