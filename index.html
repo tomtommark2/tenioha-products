@@ -1,797 +1,373 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>てにをは英語 | Products</title>
-  <link rel="icon" type="image/jpeg" href="./assets/site-icon.jpg">
-  <meta
-    name="description"
-    content="てにをは英語で作っている英語学習アプリ、YouTube、Twitch支援、Discord、NOTEをまとめた基幹ページ。"
-  >
-  <!-- Active GA4 measurement ID for this site: G-M9L0ESSBPQ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M9L0ESSBPQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-M9L0ESSBPQ");
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #eff6f8;
-      --panel: #ffffff;
-      --panel-soft: #e4eef2;
-      --line: #c8d8df;
-      --accent: #0b6f9d;
-      --accent-deep: #064866;
-      --accent-soft: #d9efff;
-      --ink: #102331;
-      --muted: #5f7280;
-      --max: 1180px;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fffdf8">
+    <meta
+      name="description"
+      content="てにをは英語の3つの英語学習アプリと、動画・支援・質問の案内をまとめた総合ページ。"
+    >
+    <title>てにをは英語 | Products</title>
+    <link rel="icon" type="image/jpeg" href="./assets/site-icon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+    <link rel="stylesheet" href="./styles.css">
+    <script>
+      if (window.location.hostname === "tomtommark2.github.io") {
+        const analyticsScript = document.createElement("script");
+        analyticsScript.async = true;
+        analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=G-M9L0ESSBPQ";
+        document.head.append(analyticsScript);
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      font-family: "Noto Sans JP", sans-serif;
-      line-height: 1.65;
-      background: var(--bg);
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .shell {
-      width: min(calc(100% - 28px), var(--max));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      border-bottom: 1px solid rgba(16, 35, 49, 0.08);
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(18px);
-    }
-
-    .site-header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 12px 0;
-    }
-
-    .site-brand {
-      font-weight: 700;
-    }
-
-    .site-header-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 0.86rem;
-      font-weight: 700;
-    }
-
-    .site-header-links a,
-    .site-footer a {
-      color: var(--accent-deep);
-      text-decoration: underline;
-      text-underline-offset: 0.2em;
-    }
-
-    .main {
-      padding: 44px 0 54px;
-    }
-
-    .hero {
-      display: grid;
-      gap: 12px;
-      max-width: 960px;
-      margin-bottom: 28px;
-    }
-
-    .kicker,
-    .status {
-      color: var(--accent-deep);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0;
-    }
-
-    h1 {
-      font-family: "BIZ UDPGothic", "Noto Sans JP", sans-serif;
-      font-size: clamp(2rem, 4.1vw, 3.05rem);
-      line-height: 1.16;
-      white-space: nowrap;
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .main-panel,
-    .card,
-    .support-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-    }
-
-    .main-panel {
-      padding: 18px;
-    }
-
-    .feature {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 420px;
-      gap: 24px;
-      margin-bottom: 16px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: linear-gradient(135deg, var(--panel), var(--accent-soft));
-    }
-
-    .feature-copy {
-      display: grid;
-      align-content: center;
-      gap: 12px;
-    }
-
-    .feature-copy h2 {
-      font-size: 1.7rem;
-      line-height: 1.18;
-    }
-
-    .feature-copy p,
-    .feature-copy .feature-copy-text {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .feature-list {
-      display: grid;
-      gap: 7px;
-      margin: 0;
-      padding-left: 1.15em;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .feature-list li::marker {
-      color: var(--accent);
-      font-weight: 900;
-    }
-
-    .motion-stage {
-      display: grid;
-      gap: 10px;
-      padding: 14px;
-      min-height: 270px;
-      align-content: center;
-      border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
-      border-radius: 8px;
-      background: var(--panel);
-    }
-
-    .motion-stage img {
-      width: 100%;
-      max-height: 320px;
-      object-fit: contain;
-      border-radius: 6px;
-      background: var(--panel-soft);
-    }
-
-    .motion-caption {
-      color: var(--muted);
-      font-size: 0.82rem;
-      text-align: center;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      width: fit-content;
-      padding: 0 18px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: #ffffff;
-      font-weight: 700;
-      text-align: center;
-      transition: transform 180ms ease, background-color 180ms ease;
-    }
-
-    .button:hover,
-    .button:focus-visible {
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    .button.light {
-      min-height: 40px;
-      padding: 0 12px;
-      background: var(--panel);
-      color: var(--accent-deep);
-      border: 1px solid var(--line);
-      font-size: 0.88rem;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .card {
-      display: grid;
-      gap: 14px;
-      min-height: 210px;
-      padding: 16px;
-      align-content: start;
-      color: var(--ink);
-      cursor: pointer;
-      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease, background-color 180ms ease;
-    }
-
-    .card:hover,
-    .card:focus-visible {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-      box-shadow: 0 14px 36px rgba(16, 35, 49, 0.1);
-      outline: none;
-    }
-
-    .card.is-selected {
-      border-color: var(--accent);
-      background: var(--accent-soft);
-      box-shadow: inset 0 0 0 2px var(--accent);
-    }
-
-    .product-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 12px;
-      object-fit: cover;
-      background: #ffffff;
-      border: 1px solid rgba(16, 35, 49, 0.08);
-    }
-
-    .card h3 {
-      font-size: 1.18rem;
-    }
-
-    .card p,
-    .support-card p {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .card-link {
-      width: fit-content;
-      margin-top: auto;
-      color: var(--accent-deep);
-      font-size: 0.86rem;
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 0.2em;
-    }
-
-    .card-link:hover,
-    .card-link:focus-visible {
-      color: var(--accent);
-      outline: none;
-    }
-
-    .support-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .support-card {
-      display: grid;
-      gap: 8px;
-      padding: 14px;
-    }
-
-    .support-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-    }
-
-    .site-footer {
-      padding: 0 0 38px;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-
-    .site-footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px 14px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-    }
-
-    @media (max-width: 900px) {
-      .feature,
-      .product-grid {
-        grid-template-columns: 1fr;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+        window.gtag("js", new Date());
+        window.gtag("config", "G-M9L0ESSBPQ");
       }
-    }
+    </script>
+  </head>
+  <body>
+    <div class="site-page">
+      <header class="site-header">
+        <div class="page-width header-inner">
+          <a class="brand" href="#top" aria-label="てにをは英語 トップへ">てにをは英語</a>
+          <nav aria-label="補助リンク">
+            <a href="mailto:tomtom.mark2@gmail.com">お問い合わせ</a>
+            <a href="./legal.html">特定商取引法に基づく表記</a>
+          </nav>
+        </div>
+      </header>
 
-    @media (max-width: 560px) {
-      .shell {
-        width: min(calc(100% - 22px), var(--max));
-      }
-
-      .site-header-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .main {
-        padding: 24px 0 36px;
-      }
-
-      .hero {
-        gap: 10px;
-        margin-bottom: 14px;
-      }
-
-      h1 {
-        font-size: clamp(1rem, 4.35vw, 1.25rem);
-        letter-spacing: -0.02em;
-      }
-
-      .lead {
-        font-size: 0.95rem;
-      }
-
-      .main-panel,
-      .feature,
-      .card,
-      .support-card {
-        padding: 14px;
-      }
-
-      .feature {
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-
-      .feature-copy {
-        gap: 9px;
-      }
-
-      .feature-copy h2 {
-        font-size: 1.42rem;
-      }
-
-      .feature-copy p,
-      .feature-copy .feature-copy-text,
-      .feature-list {
-        font-size: 0.9rem;
-      }
-
-      .motion-stage {
-        gap: 8px;
-        min-height: unset;
-        padding: 10px;
-      }
-
-      .motion-stage img {
-        max-height: 230px;
-      }
-
-      .motion-caption {
-        font-size: 0.76rem;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .card {
-        justify-items: center;
-        min-height: 112px;
-        gap: 6px;
-        padding: 10px;
-        text-align: center;
-      }
-
-      .card h3 {
-        font-size: 0;
-        line-height: 1.2;
-      }
-
-      .card h3::after {
-        content: attr(data-mobile-label);
-        font-size: 0.86rem;
-        font-weight: 700;
-      }
-
-      .card p {
-        display: none;
-      }
-
-      .card-link {
-        font-size: 0;
-      }
-
-      .card-link::after {
-        content: "開く";
-        font-size: 0.76rem;
-      }
-
-      .product-icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 10px;
-      }
-
-      .status {
-        font-size: 0.68rem;
-      }
-
-      .product-grid .status {
-        display: none;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .support-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .support-card {
-        gap: 7px;
-        min-height: 150px;
-      }
-
-      .support-card h3 {
-        font-size: 1rem;
-      }
-
-      .support-card p {
-        font-size: 0.82rem;
-      }
-
-      .support-actions .button {
-        width: auto;
-        min-height: 36px;
-        padding: 0 10px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .shell {
-        width: min(calc(100% - 16px), var(--max));
-      }
-
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        min-height: unset;
-        justify-items: start;
-        text-align: left;
-      }
-
-      .card p {
-        display: block;
-        font-size: 0.84rem;
-      }
-
-      .product-grid .status {
-        display: inline;
-      }
-
-      .card h3 {
-        font-size: 1rem;
-      }
-
-      .card h3::after,
-      .card-link::after {
-        content: none;
-      }
-
-      .card-link {
-        font-size: 0.82rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <div class="shell">
-      <div class="site-header-inner">
-        <div class="site-brand">てにをは英語 Products</div>
-        <nav class="site-header-links" aria-label="補助リンク">
-          <a href="mailto:tomtom.mark2@gmail.com">お問い合わせ</a>
-          <a href="./legal.html">特定商取引法に基づく表記</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <main class="main">
-    <div class="shell">
-      <section class="hero" aria-labelledby="page-title">
-        <div class="kicker">TENIOHA ENGLISH PRODUCTS</div>
-        <h1 id="page-title">英語学習アプリを、目的別に選ぶ。</h1>
-        <p class="lead">単語暗記、英語イメージ、英文読解をサポートするアプリをまとめました。</p>
-      </section>
-
-      <section class="main-panel" id="products" aria-label="プロダクト一覧">
-        <section class="feature" id="featured-product" aria-label="注目プロダクト">
-          <div class="feature-copy">
-            <span class="status" id="featured-status">英語図鑑</span>
-            <h2 id="featured-title">動く！てにをは英語図鑑</h2>
-            <div class="feature-copy-text" id="featured-copy">
-              単語や熟語を、静止画ではなくアニメーション素材で見せる図鑑です。
-              up なら、上へ進み、限界へ到達し、完了につながる感覚を動きで確認できます。
-            </div>
-            <p id="featured-note">丸暗記では残りにくいコアイメージを、短いモーションで何度も見返せます。</p>
-            <div>
-              <a class="button" id="featured-cta" href="https://phrasalverbapp-d5fa7.web.app/" target="_blank" rel="noreferrer" data-track="open_visual_dictionary_featured">図鑑を見る</a>
-            </div>
+      <main id="top">
+        <section class="hero page-width" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <h1 id="page-title">てにをは英語 Products</h1>
+            <p>3つのアプリで、単語・イメージ・英文読解をサポートします。</p>
           </div>
-          <div class="motion-stage" id="featured-stage">
-            <img src="./assets/pr/up-completion/up-completion-youtube-post.gif" alt="up が完了の意味につながるコアイメージを表すアニメーション素材">
-            <div class="motion-caption">up: 上へ進み、限界へ到達し、完了につながるイメージをアニメーション化</div>
+
+          <div class="hero-mark" aria-label="3つのてにをは英語アプリ">
+            <div class="hero-icons">
+              <img src="./assets/tenioha-game-icon.jpg" alt="" aria-hidden="true">
+              <img src="./assets/moving-zukan-icon.png" alt="" aria-hidden="true">
+              <img src="./assets/grammar-zukan-icon.png" alt="" aria-hidden="true">
+            </div>
+            <strong>てにをは英語</strong>
+            <span>THREE PRODUCT STAGES</span>
           </div>
         </section>
 
-        <div class="product-grid">
-          <article class="card" data-product="vocab" role="button" tabindex="0" aria-pressed="false">
-            <img class="product-icon" src="./assets/tenioha-game-icon.jpg" alt="">
-            <span class="status">英単語</span>
-            <h3 data-mobile-label="英単語">てにをは英単語アプリ</h3>
-            <p>苦手分類と復習管理で、覚えたつもりを減らす。</p>
-            <a class="card-link" href="https://tomtommark2.github.io/tenioha-game/" target="_blank" rel="noreferrer" data-track="open_vocab_app_direct">アプリを開く</a>
+        <section class="products page-width" aria-label="3つの英語学習アプリ">
+          <article class="product-stage product-stage--vocab" id="product-vocab">
+            <div class="product-copy">
+              <div class="product-index">
+                <span class="product-number">01</span>
+                <span class="product-kind">単語を覚える</span>
+              </div>
+
+              <div class="product-heading">
+                <img src="./assets/tenioha-game-icon.jpg" alt="" aria-hidden="true">
+                <h2>てにをは英単語アプリ</h2>
+              </div>
+
+              <p class="product-summary">
+                8000語以上を収録。苦手な単語を見つけ、忘れそうな頃に復習できる英単語アプリです。
+              </p>
+
+              <ul class="feature-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>中学生から英検準1級まで対応（CEFR-J準拠）</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>自動で苦手な単語を分類</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>苦手単語を忘れたころに自動で出題</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>ランキングモードで楽しく競える</span>
+                </li>
+              </ul>
+
+              <a
+                class="product-cta"
+                href="https://tomtommark2.github.io/tenioha-game/"
+                target="_blank"
+                rel="noreferrer"
+                data-track="open_vocab_app_featured"
+              >
+                アプリを開く
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="product-media">
+              <img
+                src="./assets/pr/vocabulary-app/app-intro-review-queue.gif"
+                alt="てにをは英単語アプリの復習キューと英単語カード"
+              >
+            </div>
           </article>
 
-          <article class="card is-selected" data-product="visual" role="button" tabindex="0" aria-pressed="true">
-            <img class="product-icon" src="./assets/moving-zukan-icon.png" alt="">
-            <span class="status">英語図鑑</span>
-            <h3 data-mobile-label="英語図鑑">動く！てにをは英語図鑑</h3>
-            <p>アニメーション素材を駆使して、重要語・熟語のコアイメージを視覚的につかむ。</p>
-            <a class="card-link" href="https://phrasalverbapp-d5fa7.web.app/" target="_blank" rel="noreferrer" data-track="open_visual_dictionary_direct">図鑑を開く</a>
+          <article class="product-stage product-stage--visual is-reverse" id="product-visual">
+            <div class="product-copy">
+              <div class="product-index">
+                <span class="product-number">02</span>
+                <span class="product-kind">イメージで理解する</span>
+              </div>
+
+              <div class="product-heading">
+                <img src="./assets/moving-zukan-icon.png" alt="" aria-hidden="true">
+                <h2>動く！てにをは英語図鑑</h2>
+              </div>
+
+              <p class="product-summary">
+                単語や熟語を、静止画ではなくアニメーション素材で見せる図鑑です。
+              </p>
+
+              <ul class="feature-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>単語・熟語のコアイメージを視覚的につかむ</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>動きや変化を短いモーションで確認</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>丸暗記では残りにくい感覚を直感的に理解</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>何度も見返してイメージを定着</span>
+                </li>
+              </ul>
+
+              <a
+                class="product-cta"
+                href="https://phrasalverbapp-d5fa7.web.app/"
+                target="_blank"
+                rel="noreferrer"
+                data-track="open_visual_dictionary_featured"
+              >
+                図鑑を開く
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="product-media">
+              <img
+                src="./assets/pr/up-completion/up-completion-youtube-post.gif"
+                alt="upが完了の意味につながるコアイメージのアニメーション"
+              >
+            </div>
           </article>
 
-          <article class="card" data-product="sentence" role="button" tabindex="0" aria-pressed="false">
-            <img class="product-icon" src="./assets/grammar-zukan-icon.png" alt="">
-            <span class="status">英文図解</span>
-            <h3 data-mobile-label="英文図解">てにをは英文図解</h3>
-            <p>修飾語やまとまりを、動画と音声で見える形にする。</p>
-            <a class="card-link" href="https://grammar-zukan.web.app" target="_blank" rel="noreferrer" data-track="open_grammar_zukan_direct">英文図解を開く</a>
+          <article class="product-stage product-stage--sentence" id="product-sentence">
+            <div class="product-copy">
+              <div class="product-index">
+                <span class="product-number">03</span>
+                <span class="product-kind">英文を読み解く</span>
+              </div>
+
+              <div class="product-heading">
+                <img src="./assets/grammar-zukan-icon.png" alt="" aria-hidden="true">
+                <h2>てにをは英文図解</h2>
+              </div>
+
+              <p class="product-summary">
+                重要例文の構造を、図・動画・高品質ボイスでわかりやすく確認できます。
+              </p>
+
+              <ul class="feature-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>重要例文の構造をイメージでわかりやすく</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>英文読解に必要なルールを厳選</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>高品質ボイスで例文の音読をサポート</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>実践的例文で受験レベルもサポート</span>
+                </li>
+              </ul>
+
+              <a
+                class="product-cta"
+                href="https://grammar-zukan.web.app"
+                target="_blank"
+                rel="noreferrer"
+                data-track="open_grammar_zukan_featured"
+              >
+                英文図解を開く
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="product-media">
+              <img
+                src="./assets/pr/sentence-diagram/grammar-zukan-intro-no-notice-10s.gif"
+                alt="てにをは英文図解のホーム画面と学習導線"
+              >
+            </div>
           </article>
+        </section>
+
+        <section class="support" id="support" aria-labelledby="support-title">
+          <div class="page-width">
+            <div class="support-heading">
+              <p class="eyebrow">SUPPORT &amp; CONTENTS</p>
+              <h2 id="support-title">動画・支援・質問はこちら</h2>
+            </div>
+
+            <div class="support-grid">
+              <article class="support-item">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                <span class="support-eyebrow">VIDEO</span>
+                <h3>YouTube</h3>
+                <p>英語の学び方やアプリの活用方法を動画で紹介。</p>
+                <div class="support-links">
+                  <a
+                    href="https://www.youtube.com/@tenioha-eng"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-track="open_youtube"
+                  >
+                    見る
+                    <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+
+              <article class="support-item">
+                <i class="fa-brands fa-amazon" aria-hidden="true"></i>
+                <span class="support-eyebrow">PRIME</span>
+                <h3>Primeで無料支援</h3>
+                <p>PrimeとTwitchを連携すると、無料サブスクで支援できます。</p>
+                <div class="support-links">
+                  <a
+                    href="https://help.twitch.tv/s/article/link-amazon-twitch-accounts?language=ja"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-track="open_twitch_prime_help"
+                  >
+                    連携する
+                    <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://www.twitch.tv/subs/teniohaeng"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-track="open_twitch_subscribe"
+                  >
+                    無料でサブスク
+                    <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+
+              <article class="support-item">
+                <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                <span class="support-eyebrow">DISCORD</span>
+                <h3>Discordで質問</h3>
+                <p>Twitchサブスク後は、月3回の質問ができます。</p>
+                <div class="support-links">
+                  <a
+                    href="https://discord.gg/J4rfFtJuJ4"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-track="open_discord_support"
+                  >
+                    参加する
+                    <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+
+              <article class="support-item">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <span class="support-eyebrow">NOTE</span>
+                <h3>note</h3>
+                <p>補足解説や読み物を、文章で読み返せます。</p>
+                <div class="support-links">
+                  <a
+                    href="https://note.com/tenioha_eng"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-track="open_note"
+                  >
+                    読む
+                    <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+
+              <article class="support-item">
+                <i class="fa-regular fa-star" aria-hidden="true"></i>
+                <span class="support-eyebrow">MEMBERSHIP</span>
+                <h3>Membership</h3>
+                <p>動画制作を月120円から支援できます。</p>
+                <div class="support-links">
+                  <a
+                    href="https://www.youtube.com/channel/UCVRTX0EvJFeHc74fW7EftPA/join"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-track="open_membership"
+                  >
+                    登録する
+                    <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="page-width footer-inner">
+          <span>© てにをは英語</span>
+          <div>
+            <a href="mailto:tomtom.mark2@gmail.com">お問い合わせ</a>
+            <a href="./legal.html">特定商取引法に基づく表記</a>
+          </div>
         </div>
-
-        <div class="support-grid" id="support" aria-label="支援と補足コンテンツ">
-          <article class="support-card">
-            <span class="status">YouTube</span>
-            <h3>YouTube</h3>
-            <p>最初の接点。</p>
-            <div class="support-actions">
-              <a class="button light" href="https://www.youtube.com/@tenioha-eng" target="_blank" rel="noreferrer" data-track="open_youtube">見る</a>
-            </div>
-          </article>
-
-          <article class="support-card">
-            <span class="status">Prime</span>
-            <h3>無料支援</h3>
-            <p>PrimeとTwitchを連携すると、無料サブスクで支援できます。</p>
-            <div class="support-actions">
-              <a class="button light" href="https://help.twitch.tv/s/article/link-amazon-twitch-accounts?language=ja" target="_blank" rel="noreferrer" data-track="open_twitch_prime_help">連携</a>
-              <a class="button light" href="https://www.twitch.tv/subs/teniohaeng" target="_blank" rel="noreferrer" data-track="open_twitch_subscribe">支援</a>
-            </div>
-          </article>
-
-          <article class="support-card">
-            <span class="status">Discord</span>
-            <h3>質問</h3>
-            <p>Twitchサブスク後は、月3回の質問ができます。</p>
-            <div class="support-actions">
-              <a class="button light" href="https://discord.gg/J4rfFtJuJ4" target="_blank" rel="noreferrer" data-track="open_discord_support">参加</a>
-            </div>
-          </article>
-
-          <article class="support-card">
-            <span class="status">Note</span>
-            <h3>補足解説</h3>
-            <p>文章で読み返す。</p>
-            <div class="support-actions">
-              <a class="button light" href="https://note.com/tenioha_eng" target="_blank" rel="noreferrer" data-track="open_note">読む</a>
-            </div>
-          </article>
-
-          <article class="support-card">
-            <span class="status">Membership</span>
-            <h3>メンバー登録</h3>
-            <p>動画制作を月90円から支援できます。</p>
-            <div class="support-actions">
-              <a class="button light" href="https://www.youtube.com/channel/UCVRTX0EvJFeHc74fW7EftPA/join" target="_blank" rel="noreferrer" data-track="open_membership">登録</a>
-            </div>
-          </article>
-        </div>
-      </section>
+      </footer>
     </div>
-  </main>
 
-  <footer class="site-footer" aria-label="法務・お問い合わせ">
-    <div class="shell">
-      <div class="site-footer-inner">
-        <a href="mailto:tomtom.mark2@gmail.com">お問い合わせ</a>
-        <span>|</span>
-        <a href="./legal.html">特定商取引法に基づく表記</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const featuredProducts = {
-      vocab: {
-        status: "英単語",
-        title: "てにをは英単語アプリ",
-        copyItems: [
-          "8000語以上収録。中学生～英検準1級まで対応可能な豊富な語彙（CEFR-J準拠）",
-          "自動で苦手な単語を分類",
-          "苦手単語を忘れたころに自動で出題",
-          "ランキングモードで楽しく競える"
-        ],
-        note: "豊富な機能で英単語暗記をサポート。忘れない・覚えやすい仕組みが盛りだくさんな英単語アプリです。",
-        cta: "アプリを見る",
-        href: "https://tomtommark2.github.io/tenioha-game/",
-        track: "open_vocab_app_featured",
-        stage: `
-          <img src="./assets/pr/vocabulary-app/app-intro-review-queue.gif" alt="てにをは英単語アプリの復習キュー画面を紹介するアニメーション素材">
-          <div class="motion-caption">復習キュー、英単語カード、意味カード、例文音声をまとめて見せる操作紹介</div>
-        `
-      },
-      visual: {
-        status: "英語図鑑",
-        title: "動く！てにをは英語図鑑",
-        copy: "単語や熟語を、静止画ではなくアニメーション素材で見せる図鑑です。up なら、上へ進み、限界へ到達し、完了につながる感覚を動きで確認できます。",
-        note: "丸暗記では残りにくいコアイメージを、短いモーションで何度も見返せます。",
-        cta: "図鑑を見る",
-        href: "https://phrasalverbapp-d5fa7.web.app/",
-        track: "open_visual_dictionary_featured",
-        stage: `
-          <img src="./assets/pr/up-completion/up-completion-youtube-post.gif" alt="up が完了の意味につながるコアイメージを表すアニメーション素材">
-          <div class="motion-caption">up: 上へ進み、限界へ到達し、完了につながるイメージをアニメーション化</div>
-        `
-      },
-      sentence: {
-        status: "英文図解",
-        title: "てにをは英文図解",
-        copyItems: [
-          "重要例文の構造をイメージでわかりやすく",
-          "英文読解に必要なルールを厳選。小難しい文法はつかわない",
-          "高品質ボイスで例文の音読をサポート",
-          "実践的例文で受験レベルもサポート"
-        ],
-        note: "英文のまとまりや修飾を、ただ読むだけでなく、画面上の導線と動画で確認できる学習プロダクトです。",
-        cta: "英文図解を見る",
-        href: "https://grammar-zukan.web.app",
-        track: "open_grammar_zukan_featured",
-        stage: `
-          <img src="./assets/pr/sentence-diagram/grammar-zukan-intro-no-notice-10s.gif" alt="てにをは英文図解のホーム画面と学習導線を紹介するアニメーション素材">
-          <div class="motion-caption">実践例文、用語リンク、復習まとめ、使い方へ進めるホーム導線</div>
-        `
-      }
-    };
-
-    const statusEl = document.querySelector("#featured-status");
-    const titleEl = document.querySelector("#featured-title");
-    const copyEl = document.querySelector("#featured-copy");
-    const noteEl = document.querySelector("#featured-note");
-    const ctaEl = document.querySelector("#featured-cta");
-    const stageEl = document.querySelector("#featured-stage");
-
-    function selectProduct(key) {
-      const product = featuredProducts[key];
-      if (!product) return;
-
-      document.querySelectorAll(".card[data-product]").forEach((card) => {
-        const selected = card.dataset.product === key;
-        card.classList.toggle("is-selected", selected);
-        card.setAttribute("aria-pressed", String(selected));
-      });
-
-      statusEl.textContent = product.status;
-      titleEl.textContent = product.title;
-      copyEl.replaceChildren();
-      if (product.copyItems) {
-        const list = document.createElement("ul");
-        list.className = "feature-list";
-        product.copyItems.forEach((item) => {
-          const listItem = document.createElement("li");
-          listItem.textContent = item;
-          list.append(listItem);
-        });
-        copyEl.append(list);
-      } else {
-        copyEl.textContent = product.copy;
-      }
-      noteEl.textContent = product.note;
-      ctaEl.textContent = product.cta;
-      ctaEl.href = product.href;
-      ctaEl.dataset.track = product.track;
-      stageEl.innerHTML = product.stage;
-    }
-
-    document.querySelectorAll(".card[data-product]").forEach((card) => {
-      card.addEventListener("click", (event) => {
-        if (event.target.closest("a")) {
-          return;
-        }
-        selectProduct(card.dataset.product);
-      });
-
-      card.addEventListener("keydown", (event) => {
-        if (event.key !== "Enter" && event.key !== " ") {
-          return;
-        }
-        event.preventDefault();
-        selectProduct(card.dataset.product);
-      });
-    });
-
-    document.querySelectorAll("[data-track]").forEach((element) => {
-      element.addEventListener("click", function () {
-        if (typeof window.gtag !== "function") {
-          return;
-        }
+    <script>
+      document.addEventListener("click", function trackLink(event) {
+        const target = event.target instanceof Element ? event.target : event.target.parentElement;
+        const link = target ? target.closest("[data-track]") : null;
+        if (!link || typeof window.gtag !== "function") return;
 
         window.gtag("event", "select_content", {
           content_type: "product_link",
-          item_id: element.getAttribute("data-track"),
-          link_url: element.getAttribute("href") || ""
+          item_id: link.dataset.track,
+          link_url: link.getAttribute("href") || ""
         });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
