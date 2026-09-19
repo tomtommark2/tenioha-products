@@ -20,9 +20,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     >
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=20260919-gallery3">
     <link rel="stylesheet" href="./community-unlock.css">
     <script src="./community-unlock.js" defer></script>
+    <script src="./product-gallery.js?v=3" defer></script>
     <script>
       if (window.location.hostname === "tomtommark2.github.io") {
         const analyticsScript = document.createElement("script");
@@ -62,7 +63,7 @@
             <div class="hero-icons">
               <img src="./assets/tenioha-game-icon.jpg" alt="" aria-hidden="true">
               <img src="./assets/moving-zukan-icon.png" alt="" aria-hidden="true">
-              <img src="./assets/grammar-zukan-icon.png" alt="" aria-hidden="true">
+              <img src="./assets/grammar-zukan-icon-20260906.png" alt="" aria-hidden="true">
             </div>
             <strong>てにをは英語</strong>
             <span>THREE PRODUCT STAGES</span>
@@ -103,6 +104,10 @@
                   <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                   <span>ランキングモードで楽しく競える</span>
                 </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>イラスト付きの単語は、意味を絵でも確認</span>
+                </li>
               </ul>
 
               <a
@@ -117,11 +122,16 @@
               </a>
             </div>
 
-            <div class="product-media">
-              <img
-                src="./assets/pr/vocabulary-app/app-intro-review-queue.gif"
-                alt="てにをは英単語アプリの復習キューと英単語カード"
-              >
+            <div class="product-media product-gallery product-gallery--vocab" data-gallery="vocab" aria-label="英単語アプリの画面紹介">
+              <div class="gallery-controls" role="group" aria-label="単語アプリの紹介画面を選択" hidden>
+                <button type="button" data-slide="0" aria-pressed="true" aria-controls="vocab-screen">01 自動で分類</button>
+                <button type="button" data-slide="1" aria-pressed="false" aria-controls="vocab-screen">02 イラスト付き</button>
+              </div>
+              <figure>
+                <img id="vocab-screen" src="./assets/pr/vocabulary-app/answer-classification-20260919.png" width="600" height="800" alt="apologiseと意味を表示した回答後の画面。苦手の分類に1語が反映されています。" loading="lazy">
+                <figcaption aria-live="polite">回答するだけで、苦手・得意を自動分類。</figcaption>
+              </figure>
+              <a class="gallery-expand" href="./assets/pr/vocabulary-app/answer-classification-20260919.png" target="_blank" rel="noopener noreferrer">画像を大きく見る ↗</a>
             </div>
           </article>
 
@@ -188,30 +198,30 @@
               </div>
 
               <div class="product-heading">
-                <img src="./assets/grammar-zukan-icon.png" alt="" aria-hidden="true">
+                <img src="./assets/grammar-zukan-icon-20260906.png" alt="" aria-hidden="true">
                 <h2>てにをは英文図解</h2>
               </div>
 
               <p class="product-summary">
-                重要例文の構造を、図・動画・高品質ボイスでわかりやすく確認できます。
+                英文のまとまりと読み方を、動く構造図と音声で学べます。
               </p>
 
               <ul class="feature-list">
                 <li>
                   <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                  <span>重要例文の構造をイメージでわかりやすく</span>
+                  <span>まずは1文、ログインなしで無料体験</span>
                 </li>
                 <li>
                   <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                  <span>英文読解に必要なルールを厳選</span>
+                  <span>構造図と音声で、英文の骨組みをつかむ</span>
                 </li>
                 <li>
                   <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                  <span>高品質ボイスで例文の音読をサポート</span>
+                  <span>基礎から応用、実践例文へ段階的に学ぶ</span>
                 </li>
                 <li>
                   <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                  <span>実践的例文で受験レベルもサポート</span>
+                  <span>文法・用語を調べられる無料の参考ツール</span>
                 </li>
               </ul>
 
@@ -227,11 +237,17 @@
               </a>
             </div>
 
-            <div class="product-media">
-              <img
-                src="./assets/pr/sentence-diagram/grammar-zukan-intro-no-notice-10s.gif"
-                alt="てにをは英文図解のホーム画面と学習導線"
-              >
+            <div class="product-media product-gallery" aria-label="英文図解の画面紹介">
+              <div class="gallery-controls" role="group" aria-label="紹介する画面を選択" hidden>
+                <button type="button" data-slide="0" aria-pressed="true" aria-controls="grammar-screen">01 ホーム</button>
+                <button type="button" data-slide="1" aria-pressed="false" aria-controls="grammar-screen">02 構造図</button>
+                <button type="button" data-slide="2" aria-pressed="false" aria-controls="grammar-screen">03 読み方</button>
+              </div>
+              <figure>
+                <img id="grammar-screen" src="./assets/pr/sentence-diagram/home-20260919.png" width="1120" height="900" alt="英文図解のホーム。1文の無料体験と、文法や用語を調べる参考ツール。" loading="lazy">
+                <figcaption id="grammar-caption" aria-live="polite">まず1文を体験。気になる文法も、ここから。</figcaption>
+              </figure>
+              <a class="gallery-expand" href="./assets/pr/sentence-diagram/home-20260919.png" target="_blank" rel="noopener noreferrer">画像を大きく見る ↗</a>
             </div>
           </article>
         </section>

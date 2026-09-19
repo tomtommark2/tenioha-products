@@ -164,6 +164,20 @@ img {
   letter-spacing: 0.2em;
 }
 
+.product-gallery { gap: 14px; }
+.product-gallery figure { margin: 0; min-width: 0; width: 100%; }
+.product-media.product-gallery img { width: 100%; height: auto; max-height: none; aspect-ratio: 1120 / 900; }
+.product-media.product-gallery--vocab img { aspect-ratio: 3 / 4; max-height: 510px; object-fit: contain; }
+.product-gallery--vocab figure { display: flex; flex-direction: column; }
+.product-gallery--vocab figcaption { order: -1; margin: 0 0 14px; font-size: clamp(15px, 1.6vw, 20px); font-weight: 700; line-height: 1.7; }
+.product-gallery figcaption { margin-top: 14px; font-size: 13px; line-height: 1.8; color: var(--ink); }
+.gallery-controls { display: flex; gap: 6px; width: 100%; }
+.gallery-controls[hidden] { display: none; }
+.gallery-controls button { flex: 1; min-width: 0; padding: 10px 4px; border: 1px solid #d6caa9; border-radius: 6px; background: #fffdf8; color: #52666a; font: inherit; font-size: 12px; cursor: pointer; }
+.gallery-controls button[aria-pressed="true"] { background: #102b33; border-color: #102b33; color: white; font-weight: 700; }
+.gallery-controls button:focus-visible, .gallery-expand:focus-visible { outline: 3px solid #087d7e; outline-offset: 3px; }
+.gallery-expand { justify-self: end; color: #29464d; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+
 .products {
   border-top: 1px solid var(--line);
 }
