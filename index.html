@@ -21,6 +21,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     >
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./community-unlock.css">
+    <script src="./community-unlock.js" defer></script>
     <script>
       if (window.location.hostname === "tomtommark2.github.io") {
         const analyticsScript = document.createElement("script");
@@ -234,6 +236,27 @@
           </article>
         </section>
 
+        <div class="page-width">
+<section class="community" id="community-unlock" aria-labelledby="community-title">
+      <div class="community-copy">
+        <p class="community-kicker">英文図解を応援</p>
+        <h2 id="community-title">みんなの応援で、<br>英文図解を全編無料に。</h2>
+        <p class="community-description">目標達成で、誰でも月末まで全編無料。</p>
+        <p class="community-personal">応援者は達成前から全編利用できます。<br>※有効なサブスクと教材側のTwitch連携が必要です。</p>
+      </div>
+      <div class="community-progress">
+        <div class="progress-heading"><span id="community-status">開放状況を確認中</span></div>
+        <div class="community-count"><strong id="community-count">—</strong><span>件 <span class="count-goal" id="community-goal"></span></span></div>
+        <progress id="community-meter" hidden value="0" max="100" aria-label="今月の有効サブスク件数"></progress>
+        <p class="community-remaining" id="community-remaining" aria-live="polite">最新の状況は案内ページでも確認できます。</p>
+        <p class="community-updated" id="community-updated">件数は定期集計で更新されます。</p>
+        <a class="community-primary" id="community-primary" data-track="open_community_support" href="https://grammar-zukan.web.app/support" target="_blank" rel="noopener noreferrer">Primeで応援する <span aria-hidden="true">↗</span></a>
+        <a class="community-secondary" data-track="open_community_guide" href="https://grammar-zukan.web.app/support" target="_blank" rel="noopener noreferrer">参加方法・しくみ <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="community-note">対象のPrime会員は追加料金なしで応援できます（Prime会費は別途）。無料開放の対象は英文図解の教材閲覧です。</p>
+    </section>
+        </div>
+
         <section class="support" id="support" aria-labelledby="support-title">
           <div class="page-width">
             <div class="support-heading">
@@ -264,15 +287,13 @@
                 <i class="fa-brands fa-amazon" aria-hidden="true"></i>
                 <span class="support-eyebrow">PRIME</span>
                 <h3>Primeで無料支援</h3>
-                <p>PrimeとTwitchを連携すると、無料サブスクで支援できます。</p>
+                <p>Prime特典で、英文図解をみんなに無料開放する取り組みに参加できます。</p>
                 <div class="support-links">
                   <a
-                    href="https://help.twitch.tv/s/article/link-amazon-twitch-accounts?language=ja"
-                    target="_blank"
-                    rel="noreferrer"
-                    data-track="open_twitch_prime_help"
+                    href="#community-unlock"
+                    data-track="open_community_project"
                   >
-                    連携する
+                    無料開放プロジェクトを見る
                     <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
                   </a>
                   <a
